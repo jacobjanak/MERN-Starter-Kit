@@ -33,4 +33,8 @@ app.post('/user', (req, res) => {
   })
 })
 
-app.listen(PORT)
+app.listen(PORT, () => {
+  console.log('#############################################')
+  console.log('To run the whole application use: npm run dev')
+  console.log('#############################################')
+})
