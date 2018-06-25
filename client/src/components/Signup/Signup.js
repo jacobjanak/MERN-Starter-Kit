@@ -20,6 +20,7 @@ class Signup extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     API.createUser(this.state)
+    .then(data => console.log(data))
   }
 
   render() {
@@ -30,7 +31,7 @@ class Signup extends React.Component {
         <input name="password" type="text" onChange={this.handleChange} />
         <input type="submit" value="Submit" onClick={this.handleSubmit} />
       </form>
-    )
+    );
   }
 }
 
