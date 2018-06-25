@@ -28,9 +28,9 @@ if (process.env.NODE_ENV === 'production') {
 
 // routing
 app.post('/user', (req, res) => {
-  db.User.create(req.body, (err, data) => {
-    res.json(data)
-  })
+  db.User.create(req.body)
+  .then(data => res.json(data))
+  .catch(err => res.json(err))
 })
 
 app.listen(PORT, () => {

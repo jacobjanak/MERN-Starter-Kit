@@ -12,14 +12,14 @@ class Signup extends React.Component {
   }
 
   handleChange = e => {
-    const { name, value } = event.target;
+    const { name, value } = e.target;
     this.setState({ [name]: value })
   }
 
   handleSubmit = e => {
     e.preventDefault()
     API.createUser(this.state)
-    .then(data => console.log(data))
+    .then(data => console.log(data.data))
   }
 
   render() {
